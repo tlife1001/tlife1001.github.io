@@ -529,6 +529,123 @@ h1, h2, h3 {
     margin-bottom: 10px;
 }
 
+/* Wedding Card Generator */
+.wedding-card-generator {
+    padding: 80px 0 100px 0;
+    background: #fff6fa;
+    text-align: center;
+}
+.card-form {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+.card-form input {
+    padding: 12px 18px;
+    border: 1px solid #e573a6;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    min-width: 220px;
+}
+.card-form button {
+    background: #d81b60;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.card-form button:hover {
+    background: #b8005c;
+}
+.card-result {
+    margin-top: 32px;
+}
+.wedding-card-preview {
+    position: relative;
+    width: 420px;
+    margin: 0 auto 18px auto;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #fff, #ffe3ef 80%);
+    box-shadow: 0 8px 32px rgba(184,0,92,0.10);
+    overflow: hidden;
+    padding: 32px 28px 28px 28px;
+    text-align: center;
+}
+.card-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.08;
+    z-index: 1;
+}
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+.card-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #b8005c;
+    margin-bottom: 10px;
+}
+.card-names {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #b8005c;
+    margin-bottom: 8px;
+}
+.card-guest {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #d81b60;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+.card-date {
+    font-size: 1.1rem;
+    color: #b8005c;
+    margin-bottom: 8px;
+}
+.card-location {
+    font-size: 1.1rem;
+    color: #b8005c;
+    margin-bottom: 18px;
+}
+.card-footer {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.3rem;
+    color: #b48e6d;
+}
+.download-btn {
+    background: #d81b60;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+}
+.download-btn:hover {
+    background: #b8005c;
+}
+@media (max-width: 600px) {
+    .wedding-card-preview {
+        width: 98vw;
+        padding: 18px 2vw 18px 2vw;
+        border-radius: 12px;
+    }
+    .card-form input {
+        min-width: 0;
+        width: 100px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {

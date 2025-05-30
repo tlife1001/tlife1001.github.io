@@ -161,6 +161,31 @@
         </div>
     </section>
 
+    <!-- Wedding Card Generator Section -->
+    <!-- <section class="wedding-card-generator">
+        <div class="container">
+            <h2>Tạo Thiệp Cưới Online</h2>
+            <form id="cardForm" class="card-form">
+                <input type="text" id="guestName" placeholder="Nhập tên người được mời" required>
+                <button type="submit">Tạo Thiệp</button>
+            </form>
+            <div id="cardResult" class="card-result" style="display:none;">
+                <div id="weddingCard" class="wedding-card-preview">
+                    <div class="card-bg"></div>
+                    <div class="card-content">
+                        <div class="card-title">Thiệp Mời</div>
+                        <div class="card-names">Trân trọng kính mời</div>
+                        <div class="card-guest" id="cardGuestName"></div>
+                        <div class="card-date">Ngày 15 tháng 06 năm 2024</div>
+                        <div class="card-location">Tại: Nhà thờ Đức Bà Sài Gòn</div>
+                        <div class="card-footer">Rất hân hạnh được đón tiếp!</div>
+                    </div>
+                </div>
+                <button id="downloadCard" class="download-btn">Tải ảnh thiệp</button>
+            </div>
+        </div>
+    </section> -->
+
     <!-- Modal for full image -->
     <div id="imageModal" class="image-modal">
         <span class="close-modal">&times;</span>
@@ -171,6 +196,7 @@
     </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script>
         // Scroll Reveal
         ScrollReveal().reveal('.hero-content', { delay: 200 });
@@ -274,6 +300,32 @@
             document.getElementById('modalImg').src = galleryImages[currentModalIndex];
             document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
         };
+
+        // Wedding Card Generator
+        const cardForm = document.getElementById('cardForm');
+        const cardResult = document.getElementById('cardResult');
+        const cardGuestName = document.getElementById('cardGuestName');
+        const weddingCard = document.getElementById('weddingCard');
+        const downloadCard = document.getElementById('downloadCard');
+        if(cardForm) {
+            cardForm.onsubmit = function(e) {
+                e.preventDefault();
+                const name = document.getElementById('guestName').value.trim();
+                if(name) {
+                    cardGuestName.textContent = name;
+                    cardResult.style.display = 'block';
+                    setTimeout(() => weddingCard.scrollIntoView({behavior:'smooth'}), 200);
+                }
+            };
+            downloadCard.onclick = function() {
+                html2canvas(weddingCard, {backgroundColor: null}).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'thiep-moi.png';
+                    link.href = canvas.toDataURL();
+                    link.click();
+                });
+            };
+        }
 
         // Initialize
         updateCarousel();
