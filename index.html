@@ -11,6 +11,7 @@
 <body>
     <!-- Music Control -->
     <div class="music-control">
+        <span class="music-title">Beautiful In White</span>
         <button id="musicToggle" class="music-btn">
             <i class="fas fa-music"></i>
         </button>
@@ -21,6 +22,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-bg-effect"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-date">
@@ -84,18 +86,18 @@
     <section class="rsvp">
         <div class="container">
             <h2>Xác Nhận Tham Dự</h2>
-            <form class="rsvp-form">
-                <input type="text" placeholder="Họ và tên" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Số điện thoại" required>
-                <select required>
+            <form class="rsvp-form" action="https://formspree.io/f/xdoqzqzq" method="POST">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Số điện thoại" required>
+                <select name="guests" required>
                     <option value="">Số người tham dự</option>
                     <option value="1">1 người</option>
                     <option value="2">2 người</option>
                     <option value="3">3 người</option>
                     <option value="4">4 người</option>
                 </select>
-                <textarea placeholder="Lời chúc (không bắt buộc)"></textarea>
+                <textarea name="message" placeholder="Lời chúc (không bắt buộc)"></textarea>
                 <button type="submit">Gửi</button>
             </form>
         </div>
@@ -106,35 +108,34 @@
         <div class="container">
             <h2>Khoảnh Khắc Đẹp</h2>
             <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-item">
+                <div class="carousel-gradient left"></div>
+                <div class="carousel-gradient right"></div>
+                <div class="carousel-list">
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-1.jpg', 0)">
                         <img src="images/gallery-1.jpg" alt="Khoảnh khắc đẹp 1">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-2.jpg', 1)">
                         <img src="images/gallery-2.jpg" alt="Khoảnh khắc đẹp 2">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-3.jpg', 2)">
                         <img src="images/gallery-3.jpg" alt="Khoảnh khắc đẹp 3">
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-4.jpg', 3)">
                         <img src="images/gallery-4.jpg" alt="Khoảnh khắc đẹp 4">
                     </div>
-                    <!-- Clone first items for infinite scroll -->
-                    <div class="carousel-item">
-                        <img src="images/gallery-1.jpg" alt="Khoảnh khắc đẹp 1">
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-5.jpg', 4)">
+                        <img src="images/gallery-5.jpg" alt="Khoảnh khắc đẹp 5">
                     </div>
-                    <div class="carousel-item">
-                        <img src="images/gallery-2.jpg" alt="Khoảnh khắc đẹp 2">
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-6.jpg', 5)">
+                        <img src="images/gallery-6.jpg" alt="Khoảnh khắc đẹp 6">
+                    </div>
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-7.jpg', 6)">
+                        <img src="images/gallery-7.jpg" alt="Khoảnh khắc đẹp 7">
+                    </div>
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-8.jpg', 7)">
+                        <img src="images/gallery-8.jpg" alt="Khoảnh khắc đẹp 8">
                     </div>
                 </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-btn next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
@@ -159,6 +160,15 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal for full image -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <button class="modal-nav prev">&#10094;</button>
+        <img class="modal-content" id="modalImg">
+        <button class="modal-nav next">&#10095;</button>
+        <div class="modal-indicator"><span id="modalCurrent">1</span> / <span id="modalTotal">4</span></div>
+    </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
@@ -198,90 +208,88 @@
             document.removeEventListener('click', initAudio);
         }, { once: true });
 
-        // Carousel Control
-        const carousel = document.querySelector('.carousel');
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        
-        let currentIndex = 0;
-        const itemWidth = items[0].offsetWidth;
-        const totalItems = items.length;
-        let isAnimating = false;
-        let autoScrollInterval;
-
-        // Update active state
-        function updateActiveState() {
-            items.forEach((item, index) => {
-                item.classList.remove('active');
-                if (index === currentIndex) {
-                    item.classList.add('active');
+        // Horizontal auto-scroll for carousel-list
+        const carouselList = document.querySelector('.carousel-list');
+        let scrollInterval;
+        let marqueePaused = false;
+        function startMarqueeScroll() {
+            scrollInterval = setInterval(() => {
+                if (marqueePaused) return;
+                if (carouselList.scrollLeft + carouselList.offsetWidth >= carouselList.scrollWidth - 2) {
+                    carouselList.scrollTo({ left: 0, behavior: 'auto' });
+                } else {
+                    carouselList.scrollLeft += 1.2; // smooth, slow marquee
                 }
-            });
+            }, 16); // ~60fps
         }
+        function stopMarqueeScroll() {
+            clearInterval(scrollInterval);
+        }
+        carouselList.addEventListener('mouseenter', () => { marqueePaused = true; });
+        carouselList.addEventListener('mouseleave', () => { marqueePaused = false; });
+        startMarqueeScroll();
 
-        // Auto scroll with easing
-        function autoScroll() {
-            if (!isAnimating) {
-                currentIndex++;
-                if (currentIndex >= totalItems - 2) {
-                    currentIndex = 0;
-                }
-                updateCarousel();
+        // Modal gallery logic
+        const galleryImages = [
+            'images/gallery-1.jpg',
+            'images/gallery-2.jpg',
+            'images/gallery-3.jpg',
+            'images/gallery-4.jpg',
+            'images/gallery-5.jpg',
+            'images/gallery-6.jpg',
+            'images/gallery-7.jpg',
+            'images/gallery-8.jpg'
+        ];
+        let currentModalIndex = 0;
+        // Khi mở modal thì dừng marquee
+        function openImageModal(src, idx) {
+            marqueePaused = true;
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'flex';
+            modalImg.src = src;
+            currentModalIndex = idx;
+            document.getElementById('modalCurrent').textContent = idx + 1;
+            document.getElementById('modalTotal').textContent = galleryImages.length;
+        }
+        document.querySelector('.close-modal').onclick = function() {
+            document.getElementById('imageModal').style.display = 'none';
+            marqueePaused = false;
+        };
+        document.getElementById('imageModal').onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                marqueePaused = false;
             }
+        };
+        document.querySelector('.modal-nav.prev').onclick = function(e) {
+            e.stopPropagation();
+            currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
+            document.getElementById('modalImg').src = galleryImages[currentModalIndex];
+            document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
+        };
+        document.querySelector('.modal-nav.next').onclick = function(e) {
+            e.stopPropagation();
+            currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
+            document.getElementById('modalImg').src = galleryImages[currentModalIndex];
+            document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
+        };
+
+        // Initialize
+        updateCarousel();
+
+        // Hero background effect (floating petals)
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = 4 + Math.random() * 4 + 's';
+            petal.style.opacity = 0.5 + Math.random() * 0.5;
+            document.querySelector('.hero-bg-effect').appendChild(petal);
+            setTimeout(() => petal.remove(), 8000);
         }
-
-        // Update carousel position with smooth transition
-        function updateCarousel() {
-            isAnimating = true;
-            carousel.style.transition = 'transform 1s cubic-bezier(0.4, 0, 0.2, 1)';
-            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-            
-            // Update active state after transition starts
-            setTimeout(updateActiveState, 50);
-            
-            setTimeout(() => {
-                isAnimating = false;
-            }, 1000);
-        }
-
-        // Manual navigation with smooth transition
-        prevBtn.addEventListener('click', () => {
-            if (!isAnimating) {
-                currentIndex = Math.max(0, currentIndex - 1);
-                updateCarousel();
-                resetAutoScroll();
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (!isAnimating) {
-                currentIndex = Math.min(totalItems - 3, currentIndex + 1);
-                updateCarousel();
-                resetAutoScroll();
-            }
-        });
-
-        // Reset auto scroll timer
-        function resetAutoScroll() {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(autoScroll, 5000);
-        }
-
-        // Start auto scroll with longer interval
-        autoScrollInterval = setInterval(autoScroll, 5000);
-
-        // Pause auto scroll on hover
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(autoScrollInterval);
-        });
-
-        carousel.addEventListener('mouseleave', () => {
-            autoScrollInterval = setInterval(autoScroll, 5000);
-        });
-
-        // Initialize active state
-        updateActiveState();
+        setInterval(createPetal, 600);
+        for (let i = 0; i < 10; i++) createPetal();
     </script>
 </body>
-</html> 
+</html>
