@@ -21,24 +21,41 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="hero-bg-effect"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-date">
-                    <span class="hero-date-icon">❀</span>
-                    <span>15.06.2024</span>
-                </div>
-                <h1>
-                    <span class="hero-name">Thanh</span>
-                    <span class="hero-and">&amp;</span>
-                    <span class="hero-name">Thanh</span>
-                    <span class="hero-flourish">❧</span>
-                </h1>
-                <div class="hero-subtitle">Sẽ kết hôn</div>
+                <div class="hero-date"><i class="fas fa-calendar-alt hero-date-icon"></i> 13.07.2025</div>
+                <h1 class="hero-name">T.Tân <span class="hero-and">&</span> T.Hậu</h1>
+                <p class="hero-subtitle">Trân trọng kính mời</p>
             </div>
             <div class="hero-photo">
-                <img src="images/hero-bg.jpg" alt="Ảnh cưới" />
+                <img src="images/hero-bg.jpg" alt="Couple Photo">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2>Đếm ngược đến ngày trọng đại</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-days">00</div>
+                    <div class="countdown-label">Ngày</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-hours">00</div>
+                    <div class="countdown-label">Giờ</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-minutes">00</div>
+                    <div class="countdown-label">Phút</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-seconds">00</div>
+                    <div class="countdown-label">Giây</div>
+                </div>
             </div>
         </div>
     </section>
@@ -82,26 +99,7 @@
         </div>
     </section>
 
-    <!-- RSVP Section -->
-    <section class="rsvp">
-        <div class="container">
-            <h2>Xác Nhận Tham Dự</h2>
-            <form class="rsvp-form" action="https://formspree.io/f/xdoqzqzq" method="POST">
-                <input type="text" name="name" placeholder="Họ và tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Số điện thoại" required>
-                <select name="guests" required>
-                    <option value="">Số người tham dự</option>
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                </select>
-                <textarea name="message" placeholder="Lời chúc (không bắt buộc)"></textarea>
-                <button type="submit">Gửi</button>
-            </form>
-        </div>
-    </section>
+    <!-- RSVP Section đã được di chuyển xuống trên section chỉ đường -->
 
     <!-- Gallery Section -->
     <section class="gallery">
@@ -160,10 +158,31 @@
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>Địa Điểm</h3>
-                    <p>Nhà Hàng ABC</p>
-                    <p>123 Đường XYZ, Thành Phố</p>
+                    <p>Nhà Trai - 350</p>
+                    <p>Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai</p>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    <!-- RSVP Section -->
+    <section class="rsvp">
+        <div class="container">
+            <h2>Xác Nhận Tham Dự</h2>
+            <form class="rsvp-form" action="https://formspree.io/f/xdoqzqzq" method="POST">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Số điện thoại" required>
+                <select name="guests" required>
+                    <option value="">Số người tham dự</option>
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                </select>
+                <textarea name="message" placeholder="Lời chúc (không bắt buộc)"></textarea>
+                <button type="submit">Gửi</button>
+            </form>
         </div>
     </section>
     
@@ -173,7 +192,7 @@
             <h2 class="section-title">Bản Đồ & Chỉ Dẫn</h2>
             <div class="map-container">
                 <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197956!2d106.69173781471815!3d10.780260992318766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3c586421ef%3A0xb606461945d70bc5!2zVHJ1bmcgdMOibSBIw6BuaCBjaMOtbmggVFAuIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1623123456789!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1654837289!2d106.89!3d10.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d85e042bf04b%3A0x1e8c5e15abe7e1ed!2zR2nhuqV5IENOLTQ4NywgVGjDtG4gUGjDuiBIxaluLCBYw6MgUGjDuiBIxaluLCBOaMahbiBUcuG6oWNoLCDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1623123456789!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="directions">
                     <h3>Chỉ Dẫn Đường Đi</h3>
@@ -181,21 +200,21 @@
                         <i class="fas fa-car"></i>
                         <div class="direction-content">
                             <h4>Bằng Ô Tô</h4>
-                            <p>Từ trung tâm thành phố, đi theo đường Lê Duẩn, rẽ phải vào đường Nam Kỳ Khởi Nghĩa và tiếp tục đi thẳng 2km.</p>
+                            <p>Từ TP.HCM, đi theo hướng Cao tốc Long Thành - Dầu Giây, rẽ vào đường vào huyện Nhơn Trạch và tiếp tục đi theo chỉ dẫn đến Thôn Phú Hữu, Xã Phú Hữu.</p>
                         </div>
                     </div>
                     <div class="direction-item">
                         <i class="fas fa-bus"></i>
                         <div class="direction-content">
                             <h4>Bằng Xe Buýt</h4>
-                            <p>Các tuyến xe buýt số 1, 8, 19 đều có điểm dừng gần địa điểm tổ chức.</p>
+                            <p>Các tuyến xe buýt đi Nhơn Trạch từ Bến xe Miền Đông, sau đó đi xe ôm hoặc taxi đến địa điểm.</p>
                         </div>
                     </div>
                     <div class="direction-item">
                         <i class="fas fa-taxi"></i>
                         <div class="direction-content">
                             <h4>Bằng Taxi</h4>
-                            <p>Có thể đặt Grab, Be hoặc taxi truyền thống đến địa chỉ: 123 Đường XYZ, Thành Phố.</p>
+                            <p>Có thể đặt Grab, Be hoặc taxi đến địa chỉ: Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai.</p>
                         </div>
                     </div>
                 </div>
@@ -203,30 +222,7 @@
         </div>
     </section>
 
-    <!-- Countdown Section -->
-    <section class="countdown-section">
-        <div class="container">
-            <h2>Đếm ngược đến ngày trọng đại</h2>
-            <div class="countdown-container">
-                <div class="countdown-item">
-                    <div class="countdown-value" id="countdown-days">00</div>
-                    <div class="countdown-label">Ngày</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="countdown-hours">00</div>
-                    <div class="countdown-label">Giờ</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="countdown-minutes">00</div>
-                    <div class="countdown-label">Phút</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="countdown-seconds">00</div>
-                    <div class="countdown-label">Giây</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Countdown Section được di chuyển lên sau section hero -->
 
     <!-- Wedding Card Generator Section -->
     <section class="wedding-card-generator">
@@ -263,19 +259,19 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-couple">
-                                    <div class="card-groom">
-                                        <h3>NHÀ TRAI</h3>
-                                        <p>Ông bà: Nguyễn Văn A & Trần Thị B</p>
-                                        <p>Trân trọng báo tin lễ thành hôn của con trai:</p>
-                                        <h4>Nguyễn Hoài Thanh</h4>
-                                    </div>
-                                    <div class="card-bride">
-                                        <h3>NHÀ GÁI</h3>
-                                        <p>Ông bà: Trần Văn C & Lê Thị D</p>
-                                        <p>Trân trọng báo tin lễ thành hôn của con gái:</p>
-                                        <h4>Nguyễn Hoài Thanh</h4>
-                                    </div>
+                                <div class="card-groom">
+                                    <h3>NHÀ TRAI</h3>
+                                    <p>Ông bà: Trần Văn A & Nguyễn Thị B</p>
+                                    <p>Trân trọng báo tin lễ thành hôn của con trai:</p>
+                                    <h4>Trần Thanh Tân</h4>
                                 </div>
+                                <div class="card-bride">
+                                    <h3>NHÀ GÁI</h3>
+                                    <p>Ông bà: Lê Văn C & Phạm Thị D</p>
+                                    <p>Trân trọng báo tin lễ thành hôn của con gái:</p>
+                                    <h4>Lê Thị Thanh Hậu</h4>
+                                </div>
+                            </div>
                                 <div class="card-signatures">
                                     <div class="groom-signature">Trần Thanh Tân</div>
                                     <span class="signature-and">&</span>
@@ -312,8 +308,8 @@
                                     </div>
                                     <div class="event-info">
                                         <div class="event-time">VÀO LÚC: 11:30</div>
-                                        <div class="event-venue">Địa điểm: Trung tâm Tiệc cưới Maxim's</div>
-                                        <div class="event-address">Số 40 Nguyễn Thái Học, Phường 1, Quận 1, TP.HCM</div>
+                                        <div class="event-venue">Địa điểm: Nhà Trai - 350</div>
+                                        <div class="event-address">Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai</div>
                                     </div>
                                 </div>
                             </div>
@@ -487,20 +483,28 @@
             });
         }
         
-        // Envelope animation
-        if (invitationEnvelope) {
-            invitationEnvelope.addEventListener('click', () => {
-                // Open envelope animation
+        // Hiển thị form nhập tên ngay từ đầu thay vì phải click vào phong bì
+        if (invitationEnvelope && cardForm) {
+            // Hiển thị form nhập tên ngay từ đầu
+            invitationEnvelope.style.display = 'none';
+            cardForm.style.display = 'flex';
+            
+            // Hàm mở phong bì khi nhập tên
+            function openEnvelope() {
+                invitationEnvelope.style.display = 'block';
+                cardForm.style.display = 'none';
+                
+                // Mở phong bì animation
                 gsap.to(invitationEnvelope, {
                     rotationX: 180,
                     duration: 1,
                     ease: "power2.inOut",
                     onComplete: () => {
-                        // Show card form after envelope opens
+                        // Hiển thị thiệp sau khi phong bì mở
                         setTimeout(() => {
                             invitationEnvelope.style.display = 'none';
-                            cardForm.style.display = 'flex';
-                            gsap.from(cardForm, {
+                            cardResult.style.display = 'block';
+                            gsap.from(cardResult, {
                                 y: 50,
                                 opacity: 0,
                                 duration: 0.5,
@@ -510,13 +514,13 @@
                     }
                 });
                 
-                // Trigger confetti
+                // Hiệu ứng confetti
                 confetti({
                     particleCount: 100,
                     spread: 70,
                     origin: { y: 0.6 }
                 });
-            });
+            }
         }
         
         // Card form submission
@@ -530,15 +534,8 @@
                     // Set guest name in card
                     cardGuestName.textContent = name;
                     
-                    // Hide form and show card
-                    cardForm.style.display = 'none';
-                    cardResult.style.display = 'block';
-                    
-                    // Animate card appearance
-                    gsap.fromTo(cardResult, 
-                        { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
-                    );
+                    // Mở phong bì và hiển thị thiệp
+                    openEnvelope();
                     
                     // Show first page
                     showCardPage(1);
@@ -550,7 +547,7 @@
                             spread: 70,
                             origin: { y: 0.6 }
                         });
-                    }, 500);
+                    }, 1500);
                 }
             });
         }
