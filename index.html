@@ -25,8 +25,8 @@
         <div class="hero-bg-effect"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-date"><i class="fas fa-calendar-alt hero-date-icon"></i> 13.07.2025</div>
-                <h1 class="hero-name">T.Tân <span class="hero-and">&</span> T.Hậu</h1>
+                <div class="hero-date"><i class="fas fa-calendar-alt hero-date-icon"></i> 13 & 14.07.2025</div>
+                <h1 class="hero-name">Thanh Tân <span class="hero-and">&</span> Thanh Hậu</h1>
                 <p class="hero-subtitle">Trân trọng kính mời</p>
             </div>
             <div class="hero-photo">
@@ -66,13 +66,17 @@
             <h2>Chúng tôi</h2>
             <div class="couple-info">
                 <div class="person">
-                    <h3>Nguyễn Hoài Thanh</h3>
-                    <p>Con trai ông bà Nguyễn Văn A & Trần Thị B</p>
+                    <h3>Trần Thanh Tân</h3>
+                    <p>Con trai ông bà Trần Thanh Ngọc & Phạm Thị Thanh Bình</p>
+                    <p>128 N2, Khuông Việt, Mega Village</p>
+                    <p>P. Phú Hữu, TP. Thủ Đức, TP. HCM</p>
                 </div>
                 <div class="heart"><i class="fas fa-heart"></i></div>
                 <div class="person">
-                    <h3>Nguyễn Hoài Thanh</h3>
-                    <p>Con gái ông bà Trần Văn C & Lê Thị D</p>
+                    <h3>Lê Thị Thanh Hậu</h3>
+                    <p>Con gái ông bà Lê Công Thi & Võ Thị Ngọc Mẫn</p>
+                    <p>49 Hoàng Văn Thụ, Tổ 4, P. Tây Sơn</p>
+                    <p>Thị Xã An Khê, Tỉnh Gia Lai</p>
                 </div>
             </div>
         </div>
@@ -86,14 +90,15 @@
                 <div class="event">
                     <h3>Lễ Thành Hôn</h3>
                     <p class="time">09:00 - 11:00</p>
-                    <p class="location">Nhà thờ Đức Bà Sài Gòn</p>
-                    <p class="address">1 Công xã Paris, Bến Nghé, Quận 1, TP.HCM</p>
+                    <p class="location">Tư Gia</p>
+                    <p class="address">Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai</p>
                 </div>
                 <div class="event">
                     <h3>Tiệc Cưới</h3>
-                    <p class="time">18:00 - 21:00</p>
-                    <p class="location">Khách sạn Grand Palace</p>
-                    <p class="address">123 Nguyễn Huệ, Quận 1, TP.HCM</p>
+                    <p class="time">11:00 - 14:00</p>
+                    <p class="location">Nhà Hàng Maxim's - Sảnh Louis II</p>
+                    <p class="address">Số 36 Nguyễn Thái Học, Phường 7, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam</p>
+                    <p class="note">Đón Khách: 11h00 - Khai Tiệc: 11h30</p>
                 </div>
             </div>
         </div>
@@ -133,6 +138,9 @@
                     <div class="carousel-thumb" onclick="openImageModal('images/gallery-8.jpg', 7)">
                         <img src="images/gallery-8.jpg" alt="Khoảnh khắc đẹp 8">
                     </div>
+                    <div class="carousel-thumb" onclick="openImageModal('images/gallery-9.jpg', 8)">
+                        <img src="images/gallery-9.jpg" alt="Khoảnh khắc đẹp 9">
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,14 +154,14 @@
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <h3>Điện Thoại</h3>
-                    <p>Chú Rể: 0123-456-789</p>
-                    <p>Cô Dâu: 0987-654-321</p>
+                    <p>Chú Rể (Tân): 0123-456-789</p>
+                    <p>Cô Dâu (Hậu): 0987-654-321</p>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <h3>Email</h3>
-                    <p>chure@example.com</p>
-                    <p>codau@example.com</p>
+                    <p>tanthanh@example.com</p>
+                    <p>haule@example.com</p>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
@@ -165,59 +173,131 @@
         </div>
     </section>
     
-    <!-- RSVP Section -->
-    <section class="rsvp">
-        <div class="container">
-            <h2>Xác Nhận Tham Dự</h2>
-            <form class="rsvp-form" action="https://formspree.io/f/xdoqzqzq" method="POST">
-                <input type="text" name="name" placeholder="Họ và tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Số điện thoại" required>
-                <select name="guests" required>
-                    <option value="">Số người tham dự</option>
-                    <option value="1">1 người</option>
-                    <option value="2">2 người</option>
-                    <option value="3">3 người</option>
-                    <option value="4">4 người</option>
-                </select>
-                <textarea name="message" placeholder="Lời chúc (không bắt buộc)"></textarea>
-                <button type="submit">Gửi</button>
-            </form>
-        </div>
-    </section>
-    
-    <!-- Map Section -->
+    <!-- Map Section -->    
     <section id="map" class="section map-section">
         <div class="container">
             <h2 class="section-title">Bản Đồ & Chỉ Dẫn</h2>
             <div class="map-container">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1654837289!2d106.89!3d10.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d85e042bf04b%3A0x1e8c5e15abe7e1ed!2zR2nhuqV5IENOLTQ4NywgVGjDtG4gUGjDuiBIxaluLCBYw6MgUGjDuiBIxaluLCBOaMahbiBUcuG6oWNoLCDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1623123456789!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Cell 1: Bản đồ và nút bấm -->
+                <div class="map-cell">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197956!2d107.07!3d10.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756fd4554f0cf5%3A0xb58badbe5fdb0b77!2sMaxim&#39;s%20Restaurant!5e0!3m2!1svi!2s!4v1623123456789!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="map-links">
+                        <a href="https://www.google.com/maps/place/Nh%C3%A0+h%C3%A0ng+Maxim's/@10.3664358,107.0825101,17z/data=!3m1!4b1!4m6!3m5!1s0x31756fc5f349ac29:0x7463f56c1bca12cb!8m2!3d10.3664358!4d107.085085!16s%2Fg%2F1v75pd2z?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link" title="Mở bản đồ Nhà Hàng Maxim's">
+                            <i class="fas fa-map-marked-alt"></i> Mở Google Maps - Nhà Hàng Maxim's
+                        </a>
+                        <a href="https://www.google.com/maps/place/Mega+Village/@10.784659,106.7888931,17z/data=!3m1!4b1!4m6!3m5!1s0x3175242099ec12ad:0x377792c34aab8f25!8m2!3d10.784659!4d106.791468!16s%2Fg%2F11ggs77p88?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link" title="Mở bản đồ Tư Gia">
+                            <i class="fas fa-map-marked-alt"></i> Mở Google Maps - Tư Gia
+                        </a>
+                    </div>
                 </div>
-                <div class="directions">
+                
+                <!-- Cell 2: Thông tin chỉ dẫn theo hàng ngang -->
+                <div class="directions-cell">
                     <h3>Chỉ Dẫn Đường Đi</h3>
-                    <div class="direction-item">
-                        <i class="fas fa-car"></i>
-                        <div class="direction-content">
-                            <h4>Bằng Ô Tô</h4>
-                            <p>Từ TP.HCM, đi theo hướng Cao tốc Long Thành - Dầu Giây, rẽ vào đường vào huyện Nhơn Trạch và tiếp tục đi theo chỉ dẫn đến Thôn Phú Hữu, Xã Phú Hữu.</p>
+                    <div class="directions-row">
+                        <!-- Cột 1: Lễ thành hôn -->
+                        <div class="direction-location">
+                            <h4 class="location-title">Lễ Thành Hôn tại Tư Gia (14/07/2025)</h4>
+                            <p class="location-address">128 N2, Khuông Việt, Mega Village P. Phú Hữu, TP. Thủ Đức, TP. HCM</p>
+                            
+                            <div class="direction-item">
+                                <i class="fas fa-car"></i>
+                                <div class="direction-content">
+                                    <h4>Bằng Ô Tô</h4>
+                                    <p>Từ TP.HCM, đi theo hướng Cao tốc Long Thành - Dầu Giây, rẽ vào đường vào huyện Nhơn Trạch và tiếp tục đi theo chỉ dẫn đến Thôn Phú Hữu, Xã Phú Hữu.</p>
+                                </div>
+                            </div>
+                            <div class="direction-item">
+                                <i class="fas fa-bus"></i>
+                                <div class="direction-content">
+                                    <h4>Bằng Xe Buýt</h4>
+                                    <p>Các tuyến xe buýt đi Nhơn Trạch từ Bến xe Miền Đông, sau đó đi xe ôm hoặc taxi đến địa điểm.</p>
+                                </div>
+                            </div>
+                            <div class="direction-item">
+                                <i class="fas fa-taxi"></i>
+                                <div class="direction-content">
+                                    <h4>Bằng Taxi</h4>
+                                    <p>Có thể đặt Grab, Be hoặc taxi đến địa chỉ: Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="direction-item">
-                        <i class="fas fa-bus"></i>
-                        <div class="direction-content">
-                            <h4>Bằng Xe Buýt</h4>
-                            <p>Các tuyến xe buýt đi Nhơn Trạch từ Bến xe Miền Đông, sau đó đi xe ôm hoặc taxi đến địa điểm.</p>
-                        </div>
-                    </div>
-                    <div class="direction-item">
-                        <i class="fas fa-taxi"></i>
-                        <div class="direction-content">
-                            <h4>Bằng Taxi</h4>
-                            <p>Có thể đặt Grab, Be hoặc taxi đến địa chỉ: Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai.</p>
+                        
+                        <!-- Cột 2: Tiệc cưới -->
+                        <div class="direction-location">
+                            <h4 class="location-title">Tiệc Cưới tại Nhà Hàng Maxim's (13/07/2025)</h4>
+                            <p class="location-address">Số 36 Nguyễn Thái Học, Phường 7, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu</p>
+                            
+                            <div class="direction-item">
+                                <i class="fas fa-car"></i>
+                                <div class="direction-content">
+                                    <h4>Bằng Ô Tô</h4>
+                                    <p>Từ TP.HCM, đi theo cao tốc TP.HCM - Long Thành - Dầu Giây, sau đó rẽ vào đường QL51 đi Vũng Tàu. Khi đến Vũng Tàu, đi theo đường Nguyễn Thái Học đến số 36.</p>
+                                </div>
+                            </div>
+                            <div class="direction-item">
+                                <i class="fas fa-bus"></i>
+                                <div class="direction-content">
+                                    <h4>Bằng Xe Khách</h4>
+                                    <p>Từ Bến xe Miền Đông, bắt xe khách đi Vũng Tàu. Khi đến Vũng Tàu, bạn có thể đi taxi hoặc xe ôm đến Nhà Hàng Maxim's, số 36 Nguyễn Thái Học.</p>
+                                </div>
+                            </div>
+                            <div class="direction-item">
+                                <i class="fas fa-taxi"></i>
+                                <div class="direction-content">
+                                    <h4>Bằng Taxi</h4>
+                                    <p>Đặt taxi hoặc Grab đến trực tiếp địa chỉ: Nhà Hàng Maxim's, Số 36 Nguyễn Thái Học, Phường 7, Thành Phố Vũng Tàu.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RSVP Section -->
+    <section class="rsvp" id="rsvp">
+        <div class="container">
+            <h2>Xác Nhận Tham Dự</h2>
+            <div class="rsvp-form-container">
+                <form id="rsvpForm" class="rsvp-form">
+                    <div class="rsvp-form-row">
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="rsvp-form-row">
+                        <div class="form-group">
+                            <label for="guests">Số người tham dự</label>
+                            <select id="guests" name="guests" required>
+                                <option value="1">1 người</option>
+                                <option value="2">2 người</option>
+                                <option value="3">3 người</option>
+                                <option value="4">4 người</option>
+                                <option value="5">5 người</option>
+                            </select>
+                        </div>
+                        <div class="form-group message-group">
+                            <label for="message">Lời nhắn</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="rsvp-form-row submit-row">
+                        <button type="submit" class="rsvp-submit">Gửi xác nhận</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -244,7 +324,7 @@
                             <div class="save-the-date">
                                 <div class="save-date-text">SAVE THE DATE</div>
                                 <div class="couple-names">Thanh Tân & Thanh Hậu</div>
-                                <div class="wedding-date">13.07.2025</div>
+                                <div class="wedding-date">13 & 14.07.2025</div>
                             </div>
                         </div>
                     </div>
@@ -253,25 +333,34 @@
                 
                 <div id="cardResult" class="card-result" style="display:none;">
                     <div id="weddingCard" class="wedding-card-preview">
+                        <!-- Trang 1: Thông tin gia đình -->
                         <div class="card-page card-page-1 active">
                             <div class="card-header">
                                 <div class="card-monogram">T<span class="card-monogram-and">&</span>H</div>
                             </div>
                             <div class="card-content">
                                 <div class="card-couple">
-                                <div class="card-groom">
-                                    <h3>NHÀ TRAI</h3>
-                                    <p>Ông bà: Trần Văn A & Nguyễn Thị B</p>
-                                    <p>Trân trọng báo tin lễ thành hôn của con trai:</p>
-                                    <h4>Trần Thanh Tân</h4>
+                                    <div class="card-family card-groom">
+                                        <h3>NHÀ TRAI</h3>
+                                        <p>Ông: TRẦN THANH NGỌC</p>
+                                        <p>Bà: PHẠM THỊ THANH BÌNH</p>
+                                        <p>128 N2, Khuông Việt, Mega Village</p>
+                                        <p>P. Phú Hữu, TP. Thủ Đức, TP. HCM</p>
+                                        <p class="card-announce">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN</p>
+                                        <p>CỦA CON CHÚNG TÔI</p>
+                                        <h4 class="card-person-name">Trần Thanh Tân</h4>
+                                    </div>
+                                    <div class="card-family card-bride">
+                                        <h3>NHÀ GÁI</h3>
+                                        <p>Ông: LÊ CÔNG THI</p>
+                                        <p>Bà: VÕ THỊ NGỌC MẪN</p>
+                                        <p>49 Hoàng Văn Thụ, Tổ 4, P. Tây Sơn</p>
+                                        <p>Thị Xã An Khê, Tỉnh Gia Lai</p>
+                                        <p class="card-announce">TRÂN TRỌNG BÁO TIN LỄ TÂN HÔN</p>
+                                        <p>CỦA CON CHÚNG TÔI</p>
+                                        <h4 class="card-person-name">Lê Thị Thanh Hậu</h4>
+                                    </div>
                                 </div>
-                                <div class="card-bride">
-                                    <h3>NHÀ GÁI</h3>
-                                    <p>Ông bà: Lê Văn C & Phạm Thị D</p>
-                                    <p>Trân trọng báo tin lễ thành hôn của con gái:</p>
-                                    <h4>Lê Thị Thanh Hậu</h4>
-                                </div>
-                            </div>
                                 <div class="card-signatures">
                                     <div class="groom-signature">Trần Thanh Tân</div>
                                     <span class="signature-and">&</span>
@@ -280,6 +369,7 @@
                             </div>
                         </div>
                         
+                        <!-- Trang 2: Thông tin sự kiện -->
                         <div class="card-page card-page-2">
                             <div class="card-calendar">
                                 <div class="calendar-header">THÁNG 07</div>
@@ -289,7 +379,7 @@
                                 <div class="calendar-days">
                                     <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
                                     <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
-                                    <div class="calendar-day-highlight">13</div><div>14</div><div>15</div><div>16</div>
+                                    <div class="calendar-day-highlight">13</div><div class="calendar-day-highlight">14</div><div>15</div><div>16</div>
                                     <div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div>
                                     <div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
                                     <div>29</div><div>30</div><div>31</div>
@@ -300,26 +390,50 @@
                                     <div class="guest-label">Kính mời:</div>
                                     <div id="cardGuestName" class="guest-name"></div>
                                 </div>
+                                
+                                <!-- Thông tin lễ cưới -->
                                 <div class="card-event-details">
+                                    <div class="event-date">
+                                        <div class="date-number">14</div>
+                                        <div class="date-month">07</div>
+                                        <div class="date-year">2025</div>
+                                    </div>
+                                    <div class="event-info">
+                                        <div class="event-time">VÀO LÚC: 09:00</div>
+                                        <div class="event-venue">HÔN LỄ ĐƯỢC CỬ HÀNH TẠI TƯ GIA</div>
+                                        <div class="event-address">128 N2, Khuông Việt, Mega Village, P. Phú Hữu, TP. Thủ Đức, TP. HCM</div>
+                                        <div class="event-note">THỨ HAI, NGÀY 14 THÁNG 07 NĂM 2025</div>
+                                        <div class="event-note">NHẰM NGÀY 20 THÁNG 06 NĂM ẤT TỴ</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Thông tin tiệc cưới -->
+                                <div class="card-event-details" style="margin-top: 20px;">
                                     <div class="event-date">
                                         <div class="date-number">13</div>
                                         <div class="date-month">07</div>
                                         <div class="date-year">2025</div>
                                     </div>
                                     <div class="event-info">
-                                        <div class="event-time">VÀO LÚC: 11:30</div>
-                                        <div class="event-venue">Địa điểm: Nhà Trai - 350</div>
-                                        <div class="event-address">Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai</div>
+                                        <div class="event-time">VÀO LÚC: 11:00</div>
+                                        <div class="event-venue">TIỆC MỪNG TẠI NHÀ HÀNG MAXIM'S - SẢNH LOUIS II</div>
+                                        <div class="event-address">Số 36 Nguyễn Thái Học, Phường 7, Thành Phố Vũng Tàu, Tỉnh Bà Rịa - Vũng Tàu</div>
+                                        <div class="event-note">CHỦ NHẬT, NGÀY 13 THÁNG 07 NĂM 2025</div>
+                                        <div class="event-note">NHẰM NGÀY 19 THÁNG 06 NĂM ẤT TỴ</div>
+                                        <div class="event-note">Đón Khách: 11h00 - Khai Tiệc: 11h30</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
+                        <!-- Nút điều hướng thiệp -->
                         <div class="card-navigation">
                             <button class="card-nav-btn prev-btn" id="prevCardPage"><i class="fas fa-chevron-left"></i></button>
                             <button class="card-nav-btn next-btn" id="nextCardPage"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
+                    
+                    <!-- Nút tải và chia sẻ thiệp -->
                     <div class="card-actions">
                         <button id="downloadCard" class="download-btn"><i class="fas fa-download"></i> Tải thiệp</button>
                         <button id="shareCard" class="share-btn"><i class="fas fa-share-alt"></i> Chia sẻ</button>
@@ -338,34 +452,7 @@
         <div class="modal-indicator"><span id="modalCurrent">1</span> / <span id="modalTotal">4</span></div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Thanh Tâm & Thanh Hiếu</h3>
-                    <p>13.07.2025</p>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="footer-nav">
-                    <a href="#hero">Trang Chủ</a>
-                    <a href="#couple">Cặp Đôi</a>
-                    <a href="#events">Sự Kiện</a>
-                    <a href="#rsvp">RSVP</a>
-                    <a href="#gallery">Thư Viện</a>
-                    <a href="#card-generator">Thiệp Mời</a>
-                    <a href="#contact">Liên Hệ</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Thanh Tâm & Thanh Hiếu Wedding. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Section đã được loại bỏ -->
 
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" class="scroll-top-btn">
@@ -417,7 +504,7 @@
         
         // Countdown Timer
         function updateCountdown() {
-            const weddingDate = new Date('July 13, 2025 11:30:00').getTime();
+            const weddingDate = new Date('July 14, 2025 09:00:00').getTime();
             const now = new Date().getTime();
             const timeLeft = weddingDate - now;
             

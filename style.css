@@ -238,12 +238,44 @@ h1, h2, h3 {
     font-size: 2.5rem;
 }
 
+.rsvp-form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff5f8;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .rsvp-form {
-    max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 25px;
+}
+
+.rsvp-form-row {
+    display: flex;
     gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.message-group {
+    flex: 2;
+}
+
+.rsvp-form label {
+    font-weight: 500;
+    color: #b8005c;
+    font-size: 1rem;
 }
 
 .rsvp-form input,
@@ -253,6 +285,16 @@ h1, h2, h3 {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus,
+.rsvp-form textarea:focus {
+    border-color: #d81b60;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.2);
 }
 
 .rsvp-form textarea {
@@ -260,19 +302,44 @@ h1, h2, h3 {
     resize: vertical;
 }
 
-.rsvp-form button {
-    background-color: #d81b60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.submit-row {
+    justify-content: center;
+    margin-top: 10px;
 }
 
-.rsvp-form button:hover {
-    background-color: #c2185b;
+.rsvp-submit {
+    background-color: #d81b60;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+    min-width: 200px;
+}
+
+.rsvp-submit:hover {
+    background-color: #b8005c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(184, 0, 92, 0.3);
+}
+
+/* Responsive styles for RSVP form */
+@media (max-width: 768px) {
+    .rsvp-form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .rsvp-form-container {
+        padding: 20px;
+    }
+    
+    .message-group {
+        flex: 1;
+    }
 }
 
 /* Gallery Section */
@@ -836,7 +903,7 @@ h1, h2, h3 {
     gap: 30px;
 }
 
-.card-groom, .card-bride {
+.card-family, .card-groom, .card-bride {
     flex: 1;
     text-align: center;
     padding: 20px;
@@ -859,7 +926,13 @@ h1, h2, h3 {
     line-height: 1.4;
 }
 
-.card-groom h4, .card-bride h4 {
+.card-announce {
+    font-weight: bold;
+    color: #b8005c !important;
+    margin-top: 15px !important;
+}
+
+.card-person-name, .card-groom h4, .card-bride h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     color: #d81b60;
@@ -1351,6 +1424,7 @@ html {
 /* Map Section Styles */
 .map-section {
     background-color: #f9f9f9;
+    padding: 100px 0;
 }
 
 .map-container {
@@ -1366,22 +1440,110 @@ html {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Layout mới cho map section */
+.map-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-cell {
+    width: 100%;
+}
+
+.map-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #d81b60;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+}
+
+.map-link:hover {
+    background: #b8005c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(184, 0, 92, 0.3);
+}
+
+.map-link i {
+    font-size: 1.2rem;
 }
 
 .directions {
     flex: 1;
     min-width: 300px;
-    padding: 20px;
+    padding: 30px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .directions h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #d81b60;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.directions h3:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d81b60;
+    margin: 10px auto 0;
+}
+
+/* Layout hàng ngang cho các địa điểm */
+.directions-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.direction-location {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.direction-location:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.location-title {
+    color: #d81b60;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.location-address {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
 .direction-item {
@@ -1390,21 +1552,36 @@ html {
     align-items: flex-start;
 }
 
+.direction-item:last-child {
+    margin-bottom: 0;
+}
+
 .direction-item i {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #d81b60;
     margin-right: 15px;
     margin-top: 5px;
 }
 
 .direction-content h4 {
     margin-bottom: 5px;
-    color: var(--secondary-color);
+    color: #333;
 }
 
 .direction-content p {
     color: #666;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+/* Responsive cho map section */
+@media (max-width: 768px) {
+    .directions-row {
+        flex-direction: column;
+    }
+    
+    .direction-location {
+        width: 100%;
+    }
 }
 
 /* Footer Styles */
