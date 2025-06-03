@@ -141,50 +141,197 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <h2>Liên Hệ</h2>
-            <div class="contact-info">
+            <h2 class="section-title">Liên Hệ</h2>
+            <div class="contact-container">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <p>Chú rể: 0123 456 789</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p>Cô dâu: 0987 654 321</p>
+                    <h3>Điện Thoại</h3>
+                    <p>Chú Rể: 0123-456-789</p>
+                    <p>Cô Dâu: 0987-654-321</p>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <p>Email: wedding@example.com</p>
+                    <h3>Email</h3>
+                    <p>chure@example.com</p>
+                    <p>codau@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Địa Điểm</h3>
+                    <p>Nhà Hàng ABC</p>
+                    <p>123 Đường XYZ, Thành Phố</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section id="map" class="section map-section">
+        <div class="container">
+            <h2 class="section-title">Bản Đồ & Chỉ Dẫn</h2>
+            <div class="map-container">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197956!2d106.69173781471815!3d10.780260992318766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3c586421ef%3A0xb606461945d70bc5!2zVHJ1bmcgdMOibSBIw6BuaCBjaMOtbmggVFAuIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1623123456789!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="directions">
+                    <h3>Chỉ Dẫn Đường Đi</h3>
+                    <div class="direction-item">
+                        <i class="fas fa-car"></i>
+                        <div class="direction-content">
+                            <h4>Bằng Ô Tô</h4>
+                            <p>Từ trung tâm thành phố, đi theo đường Lê Duẩn, rẽ phải vào đường Nam Kỳ Khởi Nghĩa và tiếp tục đi thẳng 2km.</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <i class="fas fa-bus"></i>
+                        <div class="direction-content">
+                            <h4>Bằng Xe Buýt</h4>
+                            <p>Các tuyến xe buýt số 1, 8, 19 đều có điểm dừng gần địa điểm tổ chức.</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <i class="fas fa-taxi"></i>
+                        <div class="direction-content">
+                            <h4>Bằng Taxi</h4>
+                            <p>Có thể đặt Grab, Be hoặc taxi truyền thống đến địa chỉ: 123 Đường XYZ, Thành Phố.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2>Đếm ngược đến ngày trọng đại</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-days">00</div>
+                    <div class="countdown-label">Ngày</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-hours">00</div>
+                    <div class="countdown-label">Giờ</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-minutes">00</div>
+                    <div class="countdown-label">Phút</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="countdown-seconds">00</div>
+                    <div class="countdown-label">Giây</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Wedding Card Generator Section -->
-    <!-- <section class="wedding-card-generator">
+    <section class="wedding-card-generator">
         <div class="container">
-            <h2>Tạo Thiệp Cưới Online</h2>
+            <h2>Thiệp Mời Online</h2>
+            <div class="invitation-intro">
+                <p>Trân trọng kính mời bạn đến dự lễ thành hôn của chúng tôi</p>
+            </div>
             <form id="cardForm" class="card-form">
                 <input type="text" id="guestName" placeholder="Nhập tên người được mời" required>
-                <button type="submit">Tạo Thiệp</button>
+                <button type="submit">Xem thiệp mời</button>
             </form>
-            <div id="cardResult" class="card-result" style="display:none;">
-                <div id="weddingCard" class="wedding-card-preview">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="card-title">Thiệp Mời</div>
-                        <div class="card-names">Trân trọng kính mời</div>
-                        <div class="card-guest" id="cardGuestName"></div>
-                        <div class="card-date">Ngày 15 tháng 06 năm 2024</div>
-                        <div class="card-location">Tại: Nhà thờ Đức Bà Sài Gòn</div>
-                        <div class="card-footer">Rất hân hạnh được đón tiếp!</div>
+            
+            <div class="invitation-card-container">
+                <div class="invitation-envelope" id="invitationEnvelope">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-content">
+                            <div class="save-the-date">
+                                <div class="save-date-text">SAVE THE DATE</div>
+                                <div class="couple-names">Thanh Tân & Thanh Hậu</div>
+                                <div class="wedding-date">13.07.2025</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="envelope-back"></div>
+                </div>
+                
+                <div id="cardResult" class="card-result" style="display:none;">
+                    <div id="weddingCard" class="wedding-card-preview">
+                        <div class="card-page card-page-1 active">
+                            <div class="card-header">
+                                <div class="card-monogram">T<span class="card-monogram-and">&</span>H</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-couple">
+                                    <div class="card-groom">
+                                        <h3>NHÀ TRAI</h3>
+                                        <p>Ông bà: Nguyễn Văn A & Trần Thị B</p>
+                                        <p>Trân trọng báo tin lễ thành hôn của con trai:</p>
+                                        <h4>Nguyễn Hoài Thanh</h4>
+                                    </div>
+                                    <div class="card-bride">
+                                        <h3>NHÀ GÁI</h3>
+                                        <p>Ông bà: Trần Văn C & Lê Thị D</p>
+                                        <p>Trân trọng báo tin lễ thành hôn của con gái:</p>
+                                        <h4>Nguyễn Hoài Thanh</h4>
+                                    </div>
+                                </div>
+                                <div class="card-signatures">
+                                    <div class="groom-signature">Trần Thanh Tân</div>
+                                    <span class="signature-and">&</span>
+                                    <div class="bride-signature">Lê Thị Thanh Hậu</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-page card-page-2">
+                            <div class="card-calendar">
+                                <div class="calendar-header">THÁNG 07</div>
+                                <div class="calendar-weekdays">
+                                    <div>CN</div><div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div>
+                                </div>
+                                <div class="calendar-days">
+                                    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+                                    <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+                                    <div class="calendar-day-highlight">13</div><div>14</div><div>15</div><div>16</div>
+                                    <div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div>
+                                    <div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+                                    <div>29</div><div>30</div><div>31</div>
+                                </div>
+                            </div>
+                            <div class="card-details">
+                                <div class="card-guest-name">
+                                    <div class="guest-label">Kính mời:</div>
+                                    <div id="cardGuestName" class="guest-name"></div>
+                                </div>
+                                <div class="card-event-details">
+                                    <div class="event-date">
+                                        <div class="date-number">13</div>
+                                        <div class="date-month">07</div>
+                                        <div class="date-year">2025</div>
+                                    </div>
+                                    <div class="event-info">
+                                        <div class="event-time">VÀO LÚC: 11:30</div>
+                                        <div class="event-venue">Địa điểm: Trung tâm Tiệc cưới Maxim's</div>
+                                        <div class="event-address">Số 40 Nguyễn Thái Học, Phường 1, Quận 1, TP.HCM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-navigation">
+                            <button class="card-nav-btn prev-btn" id="prevCardPage"><i class="fas fa-chevron-left"></i></button>
+                            <button class="card-nav-btn next-btn" id="nextCardPage"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button id="downloadCard" class="download-btn"><i class="fas fa-download"></i> Tải thiệp</button>
+                        <button id="shareCard" class="share-btn"><i class="fas fa-share-alt"></i> Chia sẻ</button>
                     </div>
                 </div>
-                <button id="downloadCard" class="download-btn">Tải ảnh thiệp</button>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Modal for full image -->
     <div id="imageModal" class="image-modal">
@@ -195,8 +342,44 @@
         <div class="modal-indicator"><span id="modalCurrent">1</span> / <span id="modalTotal">4</span></div>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Thanh Tâm & Thanh Hiếu</h3>
+                    <p>13.07.2025</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-nav">
+                    <a href="#hero">Trang Chủ</a>
+                    <a href="#couple">Cặp Đôi</a>
+                    <a href="#events">Sự Kiện</a>
+                    <a href="#rsvp">RSVP</a>
+                    <a href="#gallery">Thư Viện</a>
+                    <a href="#card-generator">Thiệp Mời</a>
+                    <a href="#contact">Liên Hệ</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Thanh Tâm & Thanh Hiếu Wedding. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
         // Scroll Reveal
         ScrollReveal().reveal('.hero-content', { delay: 200 });
@@ -205,6 +388,8 @@
         ScrollReveal().reveal('.rsvp-form', { delay: 300 });
         ScrollReveal().reveal('.gallery-item', { delay: 200 });
         ScrollReveal().reveal('.contact-item', { delay: 200 });
+        ScrollReveal().reveal('.countdown-container', { delay: 200 });
+        ScrollReveal().reveal('.invitation-envelope', { delay: 300 });
 
         // Music Control
         const musicBtn = document.getElementById('musicToggle');
@@ -233,8 +418,189 @@
             }
             document.removeEventListener('click', initAudio);
         }, { once: true });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('July 13, 2025 11:30:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // Add animation effect when seconds change
+            const secondsEl = document.getElementById('countdown-seconds');
+            secondsEl.classList.add('pulse');
+            setTimeout(() => {
+                secondsEl.classList.remove('pulse');
+            }, 500);
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Wedding Invitation Card
+        const invitationEnvelope = document.getElementById('invitationEnvelope');
+        const cardResult = document.getElementById('cardResult');
+        const cardForm = document.getElementById('cardForm');
+        const cardGuestName = document.getElementById('cardGuestName');
+        const prevCardPageBtn = document.getElementById('prevCardPage');
+        const nextCardPageBtn = document.getElementById('nextCardPage');
+        const downloadCardBtn = document.getElementById('downloadCard');
+        const shareCardBtn = document.getElementById('shareCard');
+        
+        // Card page navigation
+        let currentCardPage = 1;
+        const totalCardPages = 2;
+        
+        function showCardPage(pageNum) {
+            document.querySelectorAll('.card-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.querySelector(`.card-page-${pageNum}`).classList.add('active');
+            currentCardPage = pageNum;
+            
+            // Update navigation buttons
+            prevCardPageBtn.style.visibility = pageNum === 1 ? 'hidden' : 'visible';
+            nextCardPageBtn.style.visibility = pageNum === totalCardPages ? 'hidden' : 'visible';
+        }
+        
+        if (prevCardPageBtn && nextCardPageBtn) {
+            prevCardPageBtn.addEventListener('click', () => {
+                if (currentCardPage > 1) {
+                    showCardPage(currentCardPage - 1);
+                }
+            });
+            
+            nextCardPageBtn.addEventListener('click', () => {
+                if (currentCardPage < totalCardPages) {
+                    showCardPage(currentCardPage + 1);
+                }
+            });
+        }
+        
+        // Envelope animation
+        if (invitationEnvelope) {
+            invitationEnvelope.addEventListener('click', () => {
+                // Open envelope animation
+                gsap.to(invitationEnvelope, {
+                    rotationX: 180,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        // Show card form after envelope opens
+                        setTimeout(() => {
+                            invitationEnvelope.style.display = 'none';
+                            cardForm.style.display = 'flex';
+                            gsap.from(cardForm, {
+                                y: 50,
+                                opacity: 0,
+                                duration: 0.5,
+                                ease: "power2.out"
+                            });
+                        }, 500);
+                    }
+                });
+                
+                // Trigger confetti
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            });
+        }
+        
+        // Card form submission
+        if (cardForm) {
+            cardForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const guestNameInput = document.getElementById('guestName');
+                const name = guestNameInput.value.trim();
+                
+                if (name) {
+                    // Set guest name in card
+                    cardGuestName.textContent = name;
+                    
+                    // Hide form and show card
+                    cardForm.style.display = 'none';
+                    cardResult.style.display = 'block';
+                    
+                    // Animate card appearance
+                    gsap.fromTo(cardResult, 
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+                    );
+                    
+                    // Show first page
+                    showCardPage(1);
+                    
+                    // Trigger confetti again
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 50,
+                            spread: 70,
+                            origin: { y: 0.6 }
+                        });
+                    }, 500);
+                }
+            });
+        }
+        
+        // Download card functionality
+        if (downloadCardBtn) {
+            downloadCardBtn.addEventListener('click', () => {
+                const weddingCard = document.getElementById('weddingCard');
+                
+                html2canvas(weddingCard, {
+                    backgroundColor: null,
+                    scale: 2, // Higher quality
+                    logging: false,
+                    allowTaint: true,
+                    useCORS: true
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = `thiep-moi-${cardGuestName.textContent.trim()}.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            });
+        }
+        
+        // Share card functionality
+        if (shareCardBtn) {
+            shareCardBtn.addEventListener('click', () => {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Thiệp mời đám cưới',
+                        text: `Trân trọng kính mời ${cardGuestName.textContent.trim()} đến dự lễ cưới của chúng tôi vào ngày 13/07/2025`,
+                        url: window.location.href
+                    })
+                    .catch(error => {
+                        console.log('Lỗi chia sẻ:', error);
+                    });
+                } else {
+                    // Fallback for browsers that don't support Web Share API
+                    const dummyInput = document.createElement('input');
+                    document.body.appendChild(dummyInput);
+                    dummyInput.value = window.location.href;
+                    dummyInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(dummyInput);
+                    alert('Đã sao chép liên kết vào clipboard!');
+                }
+            });
+        }
 
-        // Horizontal auto-scroll for carousel-list
+        // Enhanced Horizontal auto-scroll for carousel-list
         const carouselList = document.querySelector('.carousel-list');
         let scrollInterval;
         let marqueePaused = false;
@@ -255,7 +621,29 @@
         carouselList.addEventListener('mouseleave', () => { marqueePaused = false; });
         startMarqueeScroll();
 
-        // Modal gallery logic
+        // Add touch support for mobile carousel
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchScrollLeft = 0;
+        
+        carouselList.addEventListener('touchstart', (e) => {
+            marqueePaused = true;
+            touchStartX = e.touches[0].clientX;
+            touchScrollLeft = carouselList.scrollLeft;
+        });
+        
+        carouselList.addEventListener('touchmove', (e) => {
+            if (marqueePaused) {
+                const touchDiff = touchStartX - e.touches[0].clientX;
+                carouselList.scrollLeft = touchScrollLeft + touchDiff;
+            }
+        });
+        
+        carouselList.addEventListener('touchend', () => {
+            setTimeout(() => { marqueePaused = false; }, 1000);
+        });
+
+        // Modal gallery logic with enhanced transitions
         const galleryImages = [
             'images/gallery-1.jpg',
             'images/gallery-2.jpg',
@@ -267,61 +655,147 @@
             'images/gallery-8.jpg'
         ];
         let currentModalIndex = 0;
-        // Khi mở modal thì dừng marquee
+        
         function openImageModal(src, idx) {
             marqueePaused = true;
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');
             modal.style.display = 'flex';
+            modalImg.style.opacity = '0';
             modalImg.src = src;
             currentModalIndex = idx;
             document.getElementById('modalCurrent').textContent = idx + 1;
             document.getElementById('modalTotal').textContent = galleryImages.length;
+            
+            // Fade in animation
+            setTimeout(() => {
+                modalImg.style.opacity = '1';
+            }, 50);
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', handleKeyNavigation);
         }
+        
+        function handleKeyNavigation(e) {
+            if (e.key === 'ArrowLeft') {
+                document.querySelector('.modal-nav.prev').click();
+            } else if (e.key === 'ArrowRight') {
+                document.querySelector('.modal-nav.next').click();
+            } else if (e.key === 'Escape') {
+                document.querySelector('.close-modal').click();
+            }
+        }
+        
         document.querySelector('.close-modal').onclick = function() {
-            document.getElementById('imageModal').style.display = 'none';
-            marqueePaused = false;
+            const modalImg = document.getElementById('modalImg');
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('imageModal').style.display = 'none';
+                marqueePaused = false;
+            }, 300);
+            document.removeEventListener('keydown', handleKeyNavigation);
         };
+        
         document.getElementById('imageModal').onclick = function(e) {
             if (e.target === this) {
-                this.style.display = 'none';
-                marqueePaused = false;
+                document.querySelector('.close-modal').click();
             }
         };
+        
         document.querySelector('.modal-nav.prev').onclick = function(e) {
             e.stopPropagation();
-            currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
-            document.getElementById('modalImg').src = galleryImages[currentModalIndex];
-            document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
+            const modalImg = document.getElementById('modalImg');
+            modalImg.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
+                modalImg.src = galleryImages[currentModalIndex];
+                document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
+                
+                setTimeout(() => {
+                    modalImg.style.opacity = '1';
+                }, 50);
+            }, 300);
         };
+        
         document.querySelector('.modal-nav.next').onclick = function(e) {
             e.stopPropagation();
-            currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
-            document.getElementById('modalImg').src = galleryImages[currentModalIndex];
-            document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
+            const modalImg = document.getElementById('modalImg');
+            modalImg.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
+                modalImg.src = galleryImages[currentModalIndex];
+                document.getElementById('modalCurrent').textContent = currentModalIndex + 1;
+                
+                setTimeout(() => {
+                    modalImg.style.opacity = '1';
+                }, 50);
+            }, 300);
         };
+        
+        // Add swipe support for gallery on mobile
+        const imageModal = document.getElementById('imageModal');
+        imageModal.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        imageModal.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swipe left - next image
+                document.querySelector('.modal-nav.next').click();
+            } else if (touchEndX > touchStartX + swipeThreshold) {
+                // Swipe right - previous image
+                document.querySelector('.modal-nav.prev').click();
+            }
+        });
 
-        // Wedding Card Generator
-        const cardForm = document.getElementById('cardForm');
-        const cardResult = document.getElementById('cardResult');
-        const cardGuestName = document.getElementById('cardGuestName');
+        // Wedding Card Generator with animations
+        // Reuse variables already defined above
         const weddingCard = document.getElementById('weddingCard');
         const downloadCard = document.getElementById('downloadCard');
-        if(cardForm) {
+        
+        if (cardForm && cardResult) {
             cardForm.onsubmit = function(e) {
                 e.preventDefault();
-                const name = document.getElementById('guestName').value.trim();
+                const guestNameInput = document.getElementById('guestName');
+                const name = guestNameInput.value.trim();
+                
                 if(name) {
                     cardGuestName.textContent = name;
+                    cardForm.style.display = 'none';
                     cardResult.style.display = 'block';
-                    setTimeout(() => weddingCard.scrollIntoView({behavior:'smooth'}), 200);
+                    
+                    // Animate card appearance
+                    gsap.fromTo(cardResult, 
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+                    );
+                    
+                    setTimeout(() => {
+                        weddingCard.scrollIntoView({behavior:'smooth'});
+                        // Trigger confetti
+                        confetti({
+                            particleCount: 50,
+                            spread: 70,
+                            origin: { y: 0.6 }
+                        });
+                    }, 200);
                 }
             };
             downloadCard.onclick = function() {
-                html2canvas(weddingCard, {backgroundColor: null}).then(canvas => {
+                html2canvas(weddingCard, {
+                    backgroundColor: null,
+                    scale: 2, // Higher quality
+                    logging: false,
+                    allowTaint: true,
+                    useCORS: true
+                }).then(canvas => {
                     const link = document.createElement('a');
                     link.download = 'thiep-moi.png';
-                    link.href = canvas.toDataURL();
+                    link.href = canvas.toDataURL('image/png');
                     link.click();
                 });
             };
