@@ -25,7 +25,7 @@
         <div class="hero-bg-effect"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-date"><i class="fas fa-calendar-alt hero-date-icon"></i> 13 & 14.07.2025</div>
+                <div class="hero-date"><i class="fas fa-calendar-alt hero-date-icon"></i> 13.07.2025</div>
                 <h1 class="hero-name">Thanh Tân <span class="hero-and">&</span> Thanh Hậu</h1>
                 <p class="hero-subtitle">Trân trọng kính mời</p>
             </div>
@@ -87,13 +87,7 @@
         <div class="container">
             <h2>Thông Tin Lễ Cưới</h2>
             <div class="timeline">
-                <div class="event">
-                    <h3>Lễ Thành Hôn</h3>
-                    <p class="time">09:00 - 11:00</p>
-                    <p class="location">Tư Gia</p>
-                    <p class="address">Giấy CN-487, Thôn Phú Hữu, Xã Phú Hữu, Huyện Nhơn Trạch, Đồng Nai</p>
-                </div>
-                <div class="event">
+                <div class="event single-event">
                     <h3>Tiệc Cưới</h3>
                     <p class="time">11:00 - 14:00</p>
                     <p class="location">Nhà Hàng Maxim's - Sảnh Louis II</p>
@@ -230,6 +224,33 @@
         </div>
     </section>
     
+    <!-- Congratulations Section -->
+    <section class="congratulations-section">
+        <div class="container">
+            <h2>Gửi Lời Chúc Mừng</h2>
+            <div class="congratulations-content">
+                <div class="congratulations-text">
+                    <p class="elegant-text">Sự hiện diện của quý khách trong ngày trọng đại này chính là niềm hạnh phúc lớn nhất của chúng tôi.</p>
+                    <p class="elegant-text">Nếu không thể đến dự được, lời chúc phúc chân thành từ quý khách đã là món quà vô giá mà chúng tôi trân trọng.</p>
+                    <p class="elegant-text">Chúng tôi xin gửi lời cảm ơn sâu sắc đến tình cảm và sự quan tâm của quý khách dành cho gia đình chúng tôi.</p>
+                </div>
+                <div class="qr-banking">
+                    <div class="qr-container">
+                        <div class="qr-header">
+                            <i class="fas fa-heart qr-heart"></i>
+                            <h4>Gửi Lời Chúc Phúc</h4>
+                        </div>
+                        <div class="qr-image-wrapper">
+                            <img src="images/banking_qr.png" alt="QR Banking" class="qr-image">
+                        </div>
+                        <p class="qr-caption">Quét mã để gửi lời chúc mừng</p>
+                        <p class="qr-note">Tấm lòng của quý khách là điều quý giá nhất</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- RSVP Section -->
     <section class="rsvp" id="rsvp">
         <div class="container">
@@ -242,15 +263,9 @@
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="form-group">
                             <label for="phone">Số điện thoại</label>
                             <input type="tel" id="phone" name="phone" required>
                         </div>
-                    </div>
-                    <div class="rsvp-form-row">
                         <div class="form-group">
                             <label for="guests">Số người tham dự</label>
                             <select id="guests" name="guests" required>
@@ -259,6 +274,16 @@
                                 <option value="3">3 người</option>
                                 <option value="4">4 người</option>
                                 <option value="5">5 người</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="rsvp-form-row">
+                        <div class="form-group">
+                            <label for="transportation">Phương tiện di chuyển</label>
+                            <select id="transportation" name="transportation" required>
+                                <option value="">Chọn phương tiện</option>
+                                <option value="self">Tự túc phương tiện</option>
+                                <option value="arranged">Xe sắp xếp</option>
                             </select>
                         </div>
                         <div class="form-group message-group">
@@ -296,7 +321,7 @@
                             <div class="save-the-date">
                                 <div class="save-date-text">SAVE THE DATE</div>
                                 <div class="couple-names">Thanh Tân & Thanh Hậu</div>
-                                <div class="wedding-date">13 & 14.07.2025</div>
+                                <div class="wedding-date">13.07.2025</div>
                             </div>
                         </div>
                     </div>
@@ -481,7 +506,7 @@
         
         // Countdown Timer
         function updateCountdown() {
-            const weddingDate = new Date('July 14, 2025 09:00:00').getTime();
+            const weddingDate = new Date('July 13, 2025 09:00:00').getTime();
             const now = new Date().getTime();
             const timeLeft = weddingDate - now;
             
