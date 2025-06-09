@@ -465,6 +465,7 @@
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         // Scroll Reveal
         ScrollReveal().reveal('.hero-content', { delay: 200 });
@@ -885,6 +886,158 @@
                     link.click();
                 });
             };
+        }
+
+        // Initialize EmailJS
+        emailjs.init('YOUR_PUBLIC_KEY'); // Thay bằng Public Key từ EmailJS
+
+        // RSVP Form Handler
+        const rsvpForm = document.getElementById('rsvpForm');
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Hiển thị loading
+                const submitBtn = document.querySelector('.rsvp-submit');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Đang gửi...';
+                submitBtn.disabled = true;
+                
+                // Thu thập dữ liệu
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    guests: document.getElementById('guests').value,
+                    transportation: document.getElementById('transportation').value,
+                    message: document.getElementById('message').value || 'Không có lời nhắn',
+                    timestamp: new Date().toLocaleString('vi-VN')
+                };
+                
+                // Template parameters cho email
+                const templateParams = {
+                    to_email: 'thanh150898@gmail.com',
+                    subject: '🎉 Xác nhận tham dự đám cưới - ' + formData.name,
+                    guest_name: formData.name,
+                    guest_phone: formData.phone,
+                    guest_count: formData.guests,
+                    transportation: formData.transportation === 'self' ? 'Tự túc phương tiện' : 'Xe sắp xếp',
+                    guest_message: formData.message,
+                    submission_time: formData.timestamp,
+                    email_content: `
+                        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #ffeef8 0%, #fff5f5 100%); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <div style="background: linear-gradient(135deg, #e91e63 0%, #f06292 100%); padding: 30px; text-align: center; color: white;">
+                                <h1 style="margin: 0; font-size: 28px; font-weight: 300;">💕 Xác Nhận Tham Dự</h1>
+                                <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 16px;">Đám cưới Thanh & [Tên cô dâu]</p>
+                            </div>
+                            
+                            <div style="padding: 40px 30px;">
+                                <div style="background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                                    <h2 style="color: #e91e63; margin: 0 0 20px 0; font-size: 22px; border-bottom: 2px solid #fce4ec; padding-bottom: 10px;">👤 Thông tin khách mời</h2>
+                                    <table style="width: 100%; border-collapse: collapse;">
+                                        <tr>
+                                            <td style="padding: 8px 0; font-weight: bold; color: #666; width: 40%;">🏷️ Họ và tên:</td>
+                                            <td style="padding: 8px 0; color: #333;">${formData.name}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px 0; font-weight: bold; color: #666;">📱 Số điện thoại:</td>
+                                            <td style="padding: 8px 0; color: #333;">${formData.phone}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px 0; font-weight: bold; color: #666;">👥 Số người tham dự:</td>
+                                            <td style="padding: 8px 0; color: #333; font-weight: bold; color: #e91e63;">${formData.guests} người</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px 0; font-weight: bold; color: #666;">🚗 Phương tiện:</td>
+                                            <td style="padding: 8px 0; color: #333;">${formData.transportation === 'self' ? '🚙 Tự túc phương tiện' : '🚌 Xe sắp xếp'}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px 0; font-weight: bold; color: #666;">⏰ Thời gian gửi:</td>
+                                            <td style="padding: 8px 0; color: #333;">${formData.timestamp}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                ${formData.message !== 'Không có lời nhắn' ? `
+                                <div style="background: white; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                                    <h3 style="color: #e91e63; margin: 0 0 15px 0; font-size: 18px;">💌 Lời nhắn từ khách mời</h3>
+                                    <div style="background: #fce4ec; border-left: 4px solid #e91e63; padding: 15px; border-radius: 8px; font-style: italic; color: #555;">
+                                        "${formData.message}"
+                                    </div>
+                                </div>
+                                ` : ''}
+                                
+                                <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%); border-radius: 12px;">
+                                    <p style="margin: 0; color: #ad1457; font-size: 16px; font-weight: 500;">🎊 Cảm ơn bạn đã xác nhận tham dự!</p>
+                                    <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Chúng tôi rất mong được gặp bạn trong ngày trọng đại này</p>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #f5f5f5; padding: 20px; text-align: center; border-top: 1px solid #eee;">
+                                <p style="margin: 0; color: #999; font-size: 12px;">📧 Email được gửi tự động từ website đám cưới</p>
+                                <p style="margin: 5px 0 0 0; color: #999; font-size: 12px;">💕 Thanh & [Tên cô dâu] - 13.07.2025</p>
+                            </div>
+                        </div>
+                    `
+                };
+                
+                // Gửi email qua EmailJS
+                emailjs.send('service_xnfxqxf', 'template_d4mb92v', templateParams)
+                    .then(function(response) {
+                        // Thành công
+                        submitBtn.textContent = '✅ Đã gửi!';
+                        submitBtn.style.background = '#4caf50';
+                        
+                        // Hiển thị thông báo thành công
+                        const successMsg = document.createElement('div');
+                        successMsg.innerHTML = `
+                            <div style="background: linear-gradient(135deg, #4caf50, #66bb6a); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; box-shadow: 0 5px 15px rgba(76,175,80,0.3);">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px;">🎉 Cảm ơn bạn đã xác nhận!</h3>
+                                <p style="margin: 0; opacity: 0.9;">Thông tin đã được gửi thành công. Chúng tôi rất mong được gặp bạn!</p>
+                            </div>
+                        `;
+                        rsvpForm.parentNode.insertBefore(successMsg, rsvpForm.nextSibling);
+                        
+                        // Reset form sau 2 giây
+                        setTimeout(() => {
+                            rsvpForm.reset();
+                            submitBtn.textContent = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                            successMsg.remove();
+                        }, 3000);
+                        
+                        // Confetti effect
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: { y: 0.6 }
+                        });
+                    })
+                    .catch(function(error) {
+                        // Lỗi
+                        console.error('EmailJS Error:', error);
+                        submitBtn.textContent = '❌ Lỗi, thử lại';
+                        submitBtn.style.background = '#f44336';
+                        
+                        // Hiển thị thông báo lỗi
+                        const errorMsg = document.createElement('div');
+                        errorMsg.innerHTML = `
+                            <div style="background: linear-gradient(135deg, #f44336, #ef5350); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; box-shadow: 0 5px 15px rgba(244,67,54,0.3);">
+                                <h3 style="margin: 0 0 10px 0; font-size: 18px;">⚠️ Có lỗi xảy ra</h3>
+                                <p style="margin: 0; opacity: 0.9;">Vui lòng thử lại hoặc liên hệ trực tiếp qua số điện thoại</p>
+                            </div>
+                        `;
+                        rsvpForm.parentNode.insertBefore(errorMsg, rsvpForm.nextSibling);
+                        
+                        // Reset sau 3 giây
+                        setTimeout(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.style.background = '';
+                            submitBtn.disabled = false;
+                            errorMsg.remove();
+                        }, 3000);
+                    });
+            });
         }
 
         // Initialize
